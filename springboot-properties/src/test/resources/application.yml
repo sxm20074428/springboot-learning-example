@@ -1,0 +1,6 @@
+## 城市属性
+city:
+  id: ${random.long}
+  province: 浙江省
+  city: 温岭松门
+  desc: 我家住在${city.province}的${city.city}
