@@ -1,0 +1,54 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>springboot</groupId>
+        <artifactId>springboot-parent</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+        <relativePath>../springboot-parent/pom.xml</relativePath>
+    </parent>
+
+    <groupId>springboot</groupId>
+    <artifactId>springboot-static</artifactId>
+    <packaging>jar</packaging>
+
+    <name>springboot-static</name>
+    <description>Demo project for Spring Boot</description>
+
+
+    <dependencies>
+        <!-- SpringBoot web依赖 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!-- SpringBoot Test 依赖 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- SpringBoot devtools热部署 依赖 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <optional>true</optional> <!-- 这个需要为 true 热部署才有效 -->
+        </dependency>
+        <!--</dependencies>-->
+
+        <!-- WebJars jQuery依赖 -->
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>jquery</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>webjars-locator</artifactId>
+        </dependency>
+
+    </dependencies>
+
+</project>
