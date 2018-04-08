@@ -28,16 +28,15 @@ public class BusinessException extends RuntimeException {
     /**
      * 具体异常码
      */
-    protected String errorCode;
+    protected int errorCode;
 
-    public String getErrorCode() {
+    public int getErrorCode() {
         return errorCode;
     }
 
     public BusinessException(ModuleCodeEnum moduleCodeEnum, ErrorCodeEnum errorCodeEnum, String message) {
         super(message);
-        this.errorCode = moduleCodeEnum.getModuleCode() + ":" + errorCodeEnum.getErrorCode();
+        this.errorCode = Integer.parseInt(moduleCodeEnum.getModuleCode()+"" + errorCodeEnum.getErrorCode());
     }
-
 
 }

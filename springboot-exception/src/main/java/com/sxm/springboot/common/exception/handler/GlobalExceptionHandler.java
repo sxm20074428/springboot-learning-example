@@ -43,7 +43,7 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(BusinessJSONException.class)
     @ResponseBody
-    public ResultResponse handleBusinessJSONException(HttpServletRequest request, BusinessJSONException exception) {
+    public ResultResponse handleBusinessJSONException(BusinessJSONException exception) {
         logger.error("handleBusinessJSONException", exception);
         return ResultResponse.createErrorResponse(exception);
     }

@@ -1,6 +1,5 @@
 package com.sxm.springboot.controller;
 
-import com.sxm.springboot.common.enums.ErrorCodeEnum;
 import org.json.JSONObject;
 import org.junit.Before;
 import org.junit.Test;
@@ -9,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
@@ -45,16 +45,26 @@ public class CityControllerTest {
                 .getContentAsString());
     }
 
+    private MvcResult getView(int id) throws Exception {
+        String path = "/cities/" + id;
+        MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders.get(path)).//
+                andDo(MockMvcResultHandlers.print())//
+                .andReturn();
+
+        return mvcResult;
+    }
+
+
     @Test
     public void test_exception_handler() throws Exception {
         int i = 1;
-        assertTrue(ErrorCodeEnum.NOT_FOUND.getErrorCode() == getCityController(i).getInt("code"));
+        System.out.println(getCityController(i));
         i++;
         assertTrue(1 == getCityController(i).getInt("code"));
         i++;
-        assertTrue(ErrorCodeEnum.INNER_ERROR.getErrorCode() == getCityController(i).getInt("code"));
+        assertTrue(getView(i).getModelAndView().getViewName().equals("error/error-business"));
         i++;
-        System.out.println(getCityController(i));
+        assertTrue(getView(i).getModelAndView().getViewName().equals("error/error"));
     }
 
 

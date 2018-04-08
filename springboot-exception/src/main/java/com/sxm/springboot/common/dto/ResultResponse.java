@@ -82,7 +82,7 @@ public class ResultResponse<T extends Serializable> implements Serializable {
      * @return ajax对象信息
      */
     public static final ResultResponse createErrorResponse(BusinessException exception) {
-        return new ResultResponse(ERROR_CODE, null, exception.getMessage());
+        return new ResultResponse(exception.getErrorCode(), null, exception.getMessage());
     }
 
     /**
