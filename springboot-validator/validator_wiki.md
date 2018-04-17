@@ -20,7 +20,7 @@ JSR303定义了一套，在`javax.validation.constraints`包目录下，hibernat
         @Min(1)
         private int id;
         @Email
-        private String username;
+        private String userName;
         @NotBlank
         @Length(min = 6, max = 36)
         private String password;
@@ -35,11 +35,11 @@ JSR303定义了一套，在`javax.validation.constraints`包目录下，hibernat
         }
     
         public String getUsername() {
-            return username;
+            return userName;
         }
     
-        public void setUsername(String username) {
-            this.username = username;
+        public void setUsername(String userName) {
+            this.userName = userName;
         }
     
         public String getPassword() {
@@ -109,7 +109,7 @@ JSR303定义了一套，在`javax.validation.constraints`包目录下，hibernat
 
 ```java
     @Email(message = "用户名必须是邮箱")
-    private String username;
+    private String userName;
 ```
 
 #### ValidationMessages.properties
@@ -246,19 +246,19 @@ public class ValidatorApiTest {
     @Test
     public void test_right_user_param_valid() throws Exception {
    
-           String rightPath = "/user/" + "12?id=123" + "&username=895219077@qq.com" + "&password=123456";
+           String rightPath = "/user/" + "12?id=123" + "&userName=895219077@qq.com" + "&password=123456";
            System.out.println(requesRightApi(rightPath));
    
        }
    
    
-   //    Body = {"fieldErrors":[{"field":"username","message":"用户名必须是邮箱"},{"field":"id","message":"{user.id.error}"},{"field":"password","message":"may not be empty"}]}
-   //    Body = {"code":2,"data":null,"msg":"password:may not be empty,id:{user.id.error},username:用户名必须是邮箱,"}
+   //    Body = {"fieldErrors":[{"field":"userName","message":"用户名必须是邮箱"},{"field":"id","message":"{user.id.error}"},{"field":"password","message":"may not be empty"}]}
+   //    Body = {"code":2,"data":null,"msg":"password:may not be empty,id:{user.id.error},userName:用户名必须是邮箱,"}
    
    @Test
    public void test_wrong_user_param_valid() throws Exception {
    
-           String errorPath = "/user/" + "1?username=sxm";
+           String errorPath = "/user/" + "1?userName=sxm";
            System.out.println(requestWrongApi(errorPath));
    
        }

@@ -2,11 +2,10 @@ package com.sxm.springboot.controller;
 
 import com.sxm.springboot.common.dto.ResultResponse;
 import com.sxm.springboot.domain.Order;
-import com.sxm.springboot.service.OrderService;
+import com.sxm.springboot.service.order.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
