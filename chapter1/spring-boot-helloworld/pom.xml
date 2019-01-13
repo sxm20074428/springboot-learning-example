@@ -8,16 +8,13 @@
         <relativePath>../springboot-parent/pom.xml</relativePath>
     </parent>
 
-    <groupId>springboot</groupId>
     <artifactId>springboot-helloworld</artifactId>
     <packaging>jar</packaging>
 
     <name>springboot-helloworld</name>
-    <description>Demo project for Spring Boot</description>
-
 
     <dependencies>
-        <!-- SpringBoot web依赖 -->
+        <!-- SpringBoot web依赖 支持: 1、web mvc; 2、restful; 3、jackjson支持; 4、aop  -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -29,14 +26,6 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-
-        <!-- SpringBoot devtools热部署 依赖 -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-devtools</artifactId>
-            <optional>true</optional> <!-- 这个需要为 true 热部署才有效 -->
-        </dependency>
-        <!--</dependencies>-->
 
     </dependencies>
 

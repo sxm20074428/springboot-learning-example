@@ -1,6 +1,5 @@
 package com.sxm.springboot;
 
-import com.sxm.springboot.web.HelloWorldController;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -52,8 +51,7 @@ public class HelloWorldControllerTest {
         mockMvc.perform(MockMvcRequestBuilders.get("/")//
                 .accept(MediaType.APPLICATION_JSON))//
                 .andExpect(status().isOk())//
-                .andExpect(content().contentType("application/json;charset=UTF-8"))//
-                .andDo(print());
+                .andExpect(content().contentType("application/json;charset=UTF-8"));
 
     }
 
