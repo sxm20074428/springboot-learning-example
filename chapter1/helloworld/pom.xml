@@ -3,15 +3,13 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>springboot</groupId>
-        <artifactId>springboot-parent</artifactId>
+        <artifactId>chapter1</artifactId>
         <version>1.0.0-SNAPSHOT</version>
-        <relativePath>../springboot-parent/pom.xml</relativePath>
+        <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <artifactId>springboot-helloworld</artifactId>
+    <artifactId>helloworld</artifactId>
     <packaging>jar</packaging>
-
-    <name>springboot-helloworld</name>
 
     <dependencies>
         <!-- SpringBoot web依赖 支持: 1、web mvc; 2、restful; 3、jackjson支持; 4、aop  -->
