@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
  * 家乡属性
  */
 @Component
+//prefix设置key的前缀;
 @ConfigurationProperties(prefix = "city")
 public class City {
 
@@ -29,6 +30,7 @@ public class City {
      * 描述
      */
     private String desc;
+
 
     public Long getId() {
         return id;
@@ -64,6 +66,11 @@ public class City {
 
     @Override
     public String toString() {
-        return "City{" + "id='" + id + '\'' + ", province='" + province + '\'' + ", city='" + city + '\'' + ", desc='" + desc + '\'' + '}';
+        return "City{" +
+                "id=" + id +
+                ", province='" + province + '\'' +
+                ", city='" + city + '\'' +
+                ", desc='" + desc + '\'' +
+                '}';
     }
 }
