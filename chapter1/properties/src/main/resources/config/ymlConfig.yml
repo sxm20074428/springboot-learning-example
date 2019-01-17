@@ -1,0 +1,19 @@
+user:
+  username: "小红"
+  password: "${user.username}123"
+  # 100以内的随机数
+  age: ${random.int(100)}
+  array : 1,2,3,4,5,6,7
+  strlist:
+    - list1
+    - list2
+    - list3
+  maplist:
+    - name: abc
+      value: abcValue
+    - name: 123
+      value: 123Value
+  map:
+    key1: value1
+    key2: value2
+

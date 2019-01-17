@@ -1,0 +1,28 @@
+#单属性key = value的形式注入;
+filePathLocation: d:/data/files
+
+#自定义的属性和值
+city:
+  # 100以内的随机数 ${random.int(100)}
+  id: ${random.long}
+  province: 浙江省
+  city: 温岭松门
+  desc: 我家住在${city.province}的${city.city}
+
+yml:
+  string: abc
+  array: [1,2,3,4,5]
+  #数组
+  #List 用-
+  stringList:
+    - configValue1
+    - configValue2
+  #Map 跟json一样key: value
+  stringMap: { key1: value1, key2: value2}
+  #List<Map<String, String>>
+  mapList:
+    - name: abc
+      value: abcValue
+    - name: efg
+      value: efgValue
+
