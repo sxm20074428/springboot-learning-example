@@ -1,5 +1,21 @@
 # springboot-static
 
+##Using Static Content
+By default Spring Boot uses /static directory in the classpath for static resources.  
+If we run our project using executable JAR then we must not keep our static resources in src/main/webapp path 
+because when JAR is packaged, it will be silently ignored by most of the build tools.  
+The path src/main/webapp can be used when we only want to package project as WAR file.  
+
+By default static resources are mapped on /** but we can change it as required using the following property.  
+For example to relocate all resources to /resources/**, we can achieve it as following.  
+
+    spring.mvc.static-path-pattern=/resources/** 
+Let us discuss how to use our static resources. 
+
+##Using JS and CSS files
+To use CSS, just create a folder named as static within the directory src\main\resources and put your files.  
+We can also create folder name such as css for CSS files and js for JS files inside the static directory. 
+
 ## 自定义静态资源映射
 如果进入SpringMVC的规则为/时，Spring Boot的默认静态资源寻找的路径顺序为：  
 ```
@@ -20,7 +36,7 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
 }
 ```  
 重启项目，访问：http://localhost/static/img/b.png 即可访问到static/img目录下的b.png图片资源。 
-         同样，http://localhost/a.png 等其他路径都可以和之前一样，按照默认静态资源寻找的路径
+         同样，http://localhost/img/a.png 等其他路径都可以和之前一样，按照默认静态资源寻找的路径
 
 ### 第2种方式：在application.properties配置
 在application.properties中添加配置：
@@ -34,8 +50,10 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
 也就是 说，/public /resources 等默认配置不能使用，只能通过/static/来访问。
 
 ## Spring Boot 配置
- WebMvcAutoConfiguration 这个类，它为 Spring Boot 提供了大量的 Web 服务的默认配置。这些配置包括但不局限于：设置了主页、webjars配置、静态资源位置等。这些配置对于我们使用配置 Web 服务很有借鉴意义。  
- 注意：想要使用默认配置，无需使用 @EnaleWebMvc 注解。使用了 @EnableWebMvc 注解后 WebMvcAutoConfiguration 提供的默认配置会失效，必须提供全部配置。
+ WebMvcAutoConfiguration 这个类，它为 Spring Boot 提供了大量的 Web 服务的默认配置。 
+ 这些配置包括但不局限于：设置了主页、webjars配置、静态资源位置等。这些配置对于我们使用配置 Web 服务很有借鉴意义。  
+ 注意：想要使用默认配置，无需使用 @EnaleWebMvc 注解。
+ 使用了 @EnableWebMvc 注解后 WebMvcAutoConfiguration 提供的默认配置会失效，必须提供全部配置。
  ```
  最后，可以通过使用 spring boot 提供的编写配置文件的方式，实现缓存，版本，以及资源隐射，压缩等功能。 简化了代码的编写
   ```

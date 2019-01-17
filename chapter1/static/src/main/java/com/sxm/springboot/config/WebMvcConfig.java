@@ -3,14 +3,16 @@ package com.sxm.springboot.config;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.CacheControl;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.springframework.web.servlet.resource.EncodedResourceResolver;
 import org.springframework.web.servlet.resource.GzipResourceResolver;
 import org.springframework.web.servlet.resource.VersionResourceResolver;
 
 import java.util.concurrent.TimeUnit;
 
-//@Configuration
-public class WebMvcConfig extends WebMvcConfigurerAdapter {
+@Configuration
+public class WebMvcConfig implements WebMvcConfigurer {
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
@@ -19,7 +21,6 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
                 .addResourceLocations("classpath:/static/")//
                 .setCacheControl(CacheControl.maxAge(10, TimeUnit.MINUTES).cachePrivate())//Http 缓存
                 .resourceChain(false) //开发时 关闭 chain cache,方便调试
-                .addResolver(new GzipResourceResolver()) //gzip 压缩
                 //使用 MD5 作为版本号，添加 VersionResourceResolver
                 .addResolver(new VersionResourceResolver().addContentVersionStrategy("/**"));
 

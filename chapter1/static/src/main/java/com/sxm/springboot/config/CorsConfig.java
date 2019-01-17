@@ -22,14 +22,14 @@ public class CorsConfig {
     @Bean
     public FilterRegistrationBean corsFilter() {
 
-        CorsConfiguration config = new CorsConfiguration();
-        config.setAllowCredentials(true);
-        config.addAllowedOrigin(CorsConfiguration.ALL); //"http://localhost"
-        config.addAllowedHeader(CorsConfiguration.ALL);
-        config.addAllowedMethod(CorsConfiguration.ALL);
+        CorsConfiguration corsConfiguration = new CorsConfiguration();
+        corsConfiguration.setAllowCredentials(true);
+        corsConfiguration.addAllowedOrigin(CorsConfiguration.ALL); //"http://localhost"
+        corsConfiguration.addAllowedHeader(CorsConfiguration.ALL);
+        corsConfiguration.addAllowedMethod(CorsConfiguration.ALL);
 
         UrlBasedCorsConfigurationSource urlBasedCorsConfigurationSource = new UrlBasedCorsConfigurationSource();
-        urlBasedCorsConfigurationSource.registerCorsConfiguration("/**", config);
+        urlBasedCorsConfigurationSource.registerCorsConfiguration("/**", corsConfiguration);
 
         FilterRegistrationBean filterRegistrationBean = new FilterRegistrationBean(new CorsFilter(urlBasedCorsConfigurationSource));
         filterRegistrationBean.setOrder(Ordered.HIGHEST_PRECEDENCE);
