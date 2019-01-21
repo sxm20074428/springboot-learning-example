@@ -1,17 +1,15 @@
-package com.sxm.springboot.web;
+package com.sxm.springboot.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-/**
- * Spring Boot HelloWorld 案例
- */
+
 @RestController
 public class HelloWorldController {
 
     @RequestMapping("/")
     public String index() {
-        return "Hello";
+        return "Hellodafd";
     }
 
 }

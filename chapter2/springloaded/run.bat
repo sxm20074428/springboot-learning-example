@@ -1,0 +1,1 @@
+java -jar main-1.0.0-SNAPSHOT.jar -javaagent:"F:\server\maven\repository\org\springframework\springloaded\1.2.7.RELEASE\springloaded-1.2.7.RELEASE.jar" -noverify -Dspringloaded=verbose;explain;watchJars=main-1.0.0-SNAPSHOT.jar com.sxm.springboot.Application
