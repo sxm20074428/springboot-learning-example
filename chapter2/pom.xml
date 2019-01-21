@@ -15,13 +15,11 @@
     <modules>
         <!--<module>springloaded</module>-->
         <!--<module>devtools</module>-->
-        <!--<module>springboot-fastjson</module>-->
-
+        <!--<module>fastjson</module>-->
+        <!--<module>log4j2</module>-->
+        <!--<module>swagger-bootstrap-ui</module>-->
         <!-- JUnit 5 in a Spring Boot-->
         <!--<module>spring-boot-junit5</module>-->
-
-        <!--Spring Boot + Log4j2 日志框架配置-->
-        <!--<module>springboot-log4j2</module>-->
     </modules>
 
 </project>
